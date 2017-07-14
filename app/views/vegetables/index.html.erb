@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vegetables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rate</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vegetables.each do |vegetable| %>
+      <tr>
+        <td><%= vegetable.name %></td>
+        <td><%= vegetable.rate %></td>
+        <td><%= vegetable.quantity %></td>
+        <td><%= link_to 'Show', vegetable %></td>
+        <td><%= link_to 'Edit', edit_vegetable_path(vegetable) %></td>
+        <td><%= link_to 'Destroy', vegetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vegetable', new_vegetable_path %>

@@ -1,0 +1,61 @@
+// Place all the styles related to the Homes controller here#
+// They will automatically be included in application#css#
+// You can use Sass (SCSS) here: http://sass-lang#com/
+
+
+body {
+
+	header {
+
+		padding: 5px;
+		height: 50px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: grey;
+		border-bottom: solid black;
+		div#logo {
+
+			img {
+				margin: 2px;
+			}
+		}
+
+		div#title {
+			h1{
+				color: white;
+			}
+		}
+	}
+
+	main#subheading {
+
+		background-color: grey;
+		display: flex;
+		justify-content: space-between;
+		height: 50px;
+		padding: 10px 10px 0px 10px;
+		border-bottom: solid black;
+
+		div.itemSearch{
+
+			flex-grow: 1;
+			display: flex;
+			justify-content: space-between;
+
+			button {
+				height:40px;
+				
+			}
+		}
+
+	}
+
+	main#left {
+
+	height: 100px;
+	width: 50px;
+	display: inline;
+	background-color: red;
+	}
+}
