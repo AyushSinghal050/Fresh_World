@@ -3,19 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang#com/
 
 
+
+
 body {
-
-	header {
-
+	background-image: url("fru.jpg");
+	background-size: 1300px,800px;
+	
+	header{
 		padding: 5px;
-		height: 50px;
+		height: 30px;
 		display: flex;
+		background-color: #81B622;
 		justify-content: space-between;
 		align-items: center;
-		background-color: grey;
-		border-bottom: solid black;
+		font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;	
+		border-bottom:1px solid #A3C14A;
+		
+		
 		div#logo {
-
 			img {
 				margin: 2px;
 			}
@@ -23,39 +28,78 @@ body {
 
 		div#title {
 			h1{
-				color: white;
+				color: #3D550C;
 			}
+		}
+
+		div#login{
+			a{
+				text-decoration:none;
+			}		
 		}
 	}
 
-	main#subheading {
-
-		background-color: grey;
+	header#subheading {
+		background-color: #ECF87F;
 		display: flex;
 		justify-content: space-between;
-		height: 50px;
+		height: 30px;
 		padding: 10px 10px 0px 10px;
-		border-bottom: solid black;
+		border-bottom: 1px solid #A3C14A;
 
-		div.itemSearch{
-
-			flex-grow: 1;
+		div#itemSearch{
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 
-			button {
+			a{
 				height:40px;
-				
+				text-decoration:none;
+				margin-left:10px;
 			}
 		}
-
 	}
 
-	main#left {
+	main{
+		
+		
 
-	height: 100px;
-	width: 50px;
-	display: inline;
-	background-color: red;
-	}
+
+		display: flex;
+		justify-content:space-around;
+
+		
+
+		#ad{
+			height:500px;
+			width:300px;
+			background-color:rgba(61,85,12,0.7);
+			bottom:10px;
+			left:5px;
+		}
+
+		#item{
+			width:800px;
+			height:500px;
+			background-color:rgba(255,255,60,0.5);
+		}
+
+		#cart{
+			postion:fixed;
+			height:500px;
+			width:300px;
+			top:0px;
+			right:5px;
+			background-color:rgba(89,152,26,0.5);
+
+			div{
+				display:grid;
+			}
+		}
+	}	
+
+	footer{
+	background-color:lightgrey;
+	opacity:0.5;
+	height:70px;
+	}	
 }

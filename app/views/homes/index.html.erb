@@ -1,36 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<header>
+<!-- <header>
   <div id="logo"><img src="logo.png" height="60px"></div>
   <div id="title"><h1>Fresh World</h1></div>
-  <div id="login">Login</div>
+  <div id="login"><a href="">Login</a></div>
+</header> -->
+
+
+
+<header id="subheading">
+  <div id="itemSearch">
+     <a href="">Fruits</a>
+     <a href="">Vegetables</a>
+     <a href="">Combos</a>
+     <a href="">Offers</a>
+     <a href="">Exotic</a>
+   </div>
+   <div id="search"><a href=""> Search</a></div> 
 </header>
 
-<main id="subheading">
-  <div id="itemSearch">
-    <button>Fruits</button>
-    <button>Vegetables</button>
-    <button>Combos</button>
-    <button>Offers</button>
-    <button>Exotic</button>
-  </div>
-  <div id="search">Search</div>
-  
+<main>
+
+  <section id="ad">
+    <div>Ad</div>
+  </section>
+
+  <section id="item">
+    <div id="item">Items</div>
+  </section>
+
+  <section id="cart">
+    <div>
+      Cart
+      <%= button_to "PROCEED AND CHECKOUT",new_cart_path,method: :get %>
+    </div>
+    
+  </section>
 </main>
-
-
-<main id="left">
-  <div>Ad</div>
-</main>
-
-<main id="center">
-  <div id="item">Items</div>
-</main>
-
-<main id="right">
-  <div>Cart</div>
-</main>
-
 <footer>
   Footer
 </footer>

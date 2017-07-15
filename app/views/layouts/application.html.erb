@@ -8,6 +8,67 @@
 </head>
 <body>
 
+
+</head>
+<body>
+<% if notice %>
+<script type="text/javascript">
+	noty({text: '<%= notice %>', type: 'alert'});
+</script>
+
+<% end %>
+
+
+<% if alert %>
+
+<script type="text/javascript">
+	noty({text: '<%= alert %>', type: 'error'});
+</script>
+<% end %>
+ 
+
+
+ <% if user_signed_in? %>
+<header>
+
+<div class="logo">
+<%= image_tag 'log.png' %>
+</div>
+
+
+<nav>
+
+<ul>
+
+<li style="list-style: none;">  <%= link_to "Logout",destroy_user_session_path,method: :delete %></li>
+</ul>
+</nav>
+
+
+</header>
+
+<% else %>
+<header>
+
+<div class="logo">
+<%= image_tag 'log.png' %>
+</div>
+
+
+<nav>
+
+<ul>
+
+<li style="list-style: none;">  <%= link_to "Login",new_user_session_path %></li>
+</ul>
+</nav>
+
+
+</header>
+
+
+ <% end %>
+
 <%= yield %>
 
 </body>
