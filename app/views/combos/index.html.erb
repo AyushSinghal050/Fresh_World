@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Combos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fruit</th>
+      <th>Vegetable</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @combos.each do |combo| %>
+      <tr>
+        <td><%= combo.fruit %></td>
+        <td><%= combo.vegetable %></td>
+        <td><%= link_to 'Show', combo %></td>
+        <td><%= link_to 'Edit', edit_combo_path(combo) %></td>
+        <td><%= link_to 'Destroy', combo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Combo', new_combo_path %>

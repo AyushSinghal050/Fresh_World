@@ -1,0 +1,19 @@
+
+
+
+<% @offers.each do |o| %>
+       <section>
+          <% fruit = o.fruit_id %>
+          <% vegetable = o.vegetable_id %>
+          <%if fruit %>
+            <%= @fruits.find(fruit).name%>
+          <% end %>
+         <%if vegetable%>
+          <%= @vegetables.find(vegetable).name%>
+        <% end %>
+      <img src="fru.jpg">
+      <a href="">Add To Cart</a>
+      <a href="">Some Facts</a>
+      </section>
+        
+      <%end%>

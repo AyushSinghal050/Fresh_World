@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fruit:</strong>
+  <%= @combo.fruit %>
+</p>
+
+<p>
+  <strong>Vegetable:</strong>
+  <%= @combo.vegetable %>
+</p>
+
+<%= link_to 'Edit', edit_combo_path(@combo) %> |
+<%= link_to 'Back', combos_path %>

@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
 
+  get '/vegetable' => 'homes#vegetable'
+  get '/fruit' => 'homes#fruit'
+  get '/offer' => 'homes#offer'
+  resources :offers
+  resources :combos
+  resources :combos
   root 'homes#index'
   resources :homes
   resources :carts
   resources :vegetables
   resources :fruits
   devise_for :users
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,8 +5,25 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
+    @offers = Offer.all
+    @carts = Cart.all
+    @vegetables = Vegetable.all
+    @combos = Combo.all
+    @fruits = Fruit.all
   end
 
+  def vegetable
+    @vegetables = Vegetable.all
+
+  end
+
+  def fruit
+    @fruits = Fruit.all
+  end
+
+  def offer
+    @offers = Offer.all
+  end
   # GET /homes/1
   # GET /homes/1.json
   def show
