@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <!-- <header>
   <div id="logo"><img src="logo.png" height="60px"></div>
@@ -26,17 +26,69 @@
   </section>
 
   <section id="item">
-    <div id="item">Items</div>
+    <div id="items">
+      <section>
+      ITEM 1
+      <img src="fru.jpg">
+      <a href="">Add To Cart</a>
+      <a href="">Some Facts</a>
+      </section>
+
+      <section>
+      ITEM 2
+      <img src="fru.jpg">
+      <a href="">Add To Cart</a>
+      <a href="">Some Facts</a>
+      </section>
+
+      <section>
+      ITEM 3
+      <img src="fru.jpg">
+      <a href="">Add To Cart</a>
+      <a href="">Some Facts</a>
+      </section>
+
+      <section>
+      ITEM 4
+      <img src="fru.jpg">
+      <a href="">Add To Cart</a>
+      <a href="">Some Facts</a>
+      </section>
+
+      <section>
+      ITEM 5
+      <img src="fru.jpg">
+      <a href="">Add To Cart</a>
+      <a href="">Some Facts</a>
+      </section>
+
+      <section>
+      ITEM 6
+      <img src="fru.jpg">
+      <a href="">Add To Cart</a>
+      <a href="">Some Facts</a>
+      </section>
+
+      <section>
+      ITEM 7
+      <img src="fru.jpg">
+      <a href="">Add To Cart</a>
+      <a href="">Some Facts</a>
+      </section>
+    </div>
   </section>
 
   <section id="cart">
     <div>
       Cart
+      <% if user_signed_in? %>
       <%= button_to "PROCEED AND CHECKOUT",new_cart_path,method: :get %>
+      
+      <% end %>
     </div>
     
   </section>
 </main>
-<footer>
+<!-- <footer>
   Footer
-</footer>
+</footer> -->
