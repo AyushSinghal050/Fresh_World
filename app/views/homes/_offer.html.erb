@@ -6,14 +6,31 @@
           <% fruit = o.fruit_id %>
           <% vegetable = o.vegetable_id %>
           <%if fruit %>
-            <%= @fruits.find(fruit).name%>
+            <%= @fruits.find(fruit).name%><br>
           <% end %>
          <%if vegetable%>
-          <%= @vegetables.find(vegetable).name%>
+          <%= @vegetables.find(vegetable).name%><br>
         <% end %>
-      <img src="fru.jpg">
-      <a href="">Add To Cart</a>
-      <a href="">Some Facts</a>
+      <img src="fru.jpg"><br>
+      <%if fruit %>
+          <div class="iteminfo">
+            <div>Rs.<%=@fruits.find(fruit).rate%></div>
+             <div class="addtocart"><%=button_to "Add To Cart" , action: "addfruit" , params: { fruit_id: o.fruit_id } , :method => "post" %></div><div><%=@fruits.find(fruit).weight%><%=@fruits.find(fruit).weightin%></div>
+          </div>
+          
+         
+         
+      <% end %>
+      <%if vegetable%>
+
+         <div class="iteminfo">
+            <div>Rs.<%=@vegetables.find(vegetable).rate%></div>
+            <div class="addtocart"><%=button_to "Add To Cart" , action: "addvegetable" , params: { vegetable_id: o.vegetable_id } , :method => "post" %></div><div><%=@vegetables.find(vegetable).weight%><%=@vegetables.find(vegetable).weightin%></div>
+          </div>
+          
+         
+         <% end %>
+        <!--  <a href="">Some Facts</a> -->
       </section>
         
       <%end%>

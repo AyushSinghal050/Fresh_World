@@ -1,0 +1,76 @@
+
+
+<% @orders.each do |order| %>
+	<%total =0%>
+	<%total_quantity=0%>
+	<% if order.Status == false %>
+	<section class="orderplaced">
+		<div class="details">
+			Name : <%= order.Buyername %><br>
+			Number : <%= order.Buyernumber %><br>
+			Address : <%= order.Buyeraddress %><br>
+		</div>
+		<div class="finalitems">
+			<table>
+				<thead>
+					<th>Item</th>
+					<th>Quantity</th>
+					<th>Amount</th>
+					<th></th>
+				</thead><tbody>
+			<% @cartsitems.where(cart_id: order.cart_id).each do |item| %>
+				<tr>
+					<td><%= item.item %></td>
+					<td><%= item.quantity %></td>
+					<td><%= item.amount %></td>
+					<td><%=check_box_tag 'item'%></td>
+				</tr>
+				<%total = total+item.amount %><% total_quantity = total_quantity + item.quantity%>
+			<%end%>
+			</tbody>
+			</table>
+			<div class="total">
+				Total item: <%=total_quantity%><br>
+				Total Amount: <%=total%>
+			</div>
+		</div>
+	</section>>
+	
+	<%else%>
+
+	<section class="orderdelivered">
+		<div class="details">
+			Name : <%= order.Buyername %><br>
+			Number : <%= order.Buyernumber %><br>
+			Address : <%= order.Buyeraddress %><br>
+		</div>
+		<div class="finalitems">
+			<table>
+				<thead>
+					<th>Item</th>
+					<th>Quantity</th>
+					<th>Amount</th>
+					<th></th>
+				</thead><tbody>
+			<% @cartsitems.where(cart_id: order.cart_id).each do |item| %>
+				<tr>
+					<td><%= item.item %></td>
+					<td><%= item.quantity %></td>
+					<td><%= item.amount %></td>
+					<td><%=check_box_tag 'item'%></td>
+				</tr>
+				<%total = total+item.amount %><% total_quantity = total_quantity + item.quantity%>
+			<%end%>
+			</tbody>
+			</table>
+			<div class="total">
+				Total item: <%=total_quantity%><br>
+				Total Amount: <%=total%>
+			</div>
+		</div>
+	</section>>
+		
+		
+	<%end%>
+	
+<%end%>

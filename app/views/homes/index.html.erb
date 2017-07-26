@@ -1,31 +1,32 @@
-<!-- <p id="notice"><%= notice %></p>
+<!-- <p class="notice"><%= notice %></p>
  -->
 <!-- <header>
-  <div id="logo"><img src="logo.png" height="60px"></div>
-  <div id="title"><h1>Fresh World</h1></div>
-  <div id="login"><a href="">Login</a></div>
+  <div class="logo"><img src="logo.png" height="60px"></div>
+  <div class="title"><h1>Fresh World</h1></div>
+  <div class="login"><a href="">Login</a></div>
 </header> -->
 
 
 
-<header id="subheading">
-  <div id="itemSearch">
+<header class="subheading">
+  <div class="itemSearch">
+     <a >Home</a>
      <a href="vegetable">Vegetables</a>
      <a href="fruit">Fruits</a>
-     <a href="offer">Offers</a>
-     <a href="">Exotic</a>
-   </div>
-   <div id="search"><a href=""> Search</a></div> 
+     <a href="offer">Offers</a> 
+  </div>
+
+  <div class="search"><a href=""> <button>Search</button></a></div> 
 </header>
 
 <main>
 
-  <section id="ad">
-    <div>Ad</div>
+  <section class="ad">
+    <div><%= render 'ad' %></div>
   </section>
 
-  <section id="item">
-    <div id="items">
+  <section class="item">
+    <section class="items">
       <%= render 'offer' %>
 
 
@@ -33,27 +34,30 @@
 
       <%= render 'vegetable' %>
 
-
-
-      
-
-
-
-      
-
-
-
-    </div>
+    </section>
   </section>
 
-  <!-- <section id="cart"> -->
-    <div>
-      Cart
-      <%= button_to "PROCEED AND CHECKOUT",new_cart_path,method: :get %>
-    </div>
-    
-  </section>
+
+  <!-- <section class="cart"> -->
+    <%= render 'cart'%>
 </main>
-<footer>
-  Footer
-</footer>
+
+<!-- 
+<script type="text/javascript">
+  $.ajax({url: '/ajax',
+    data: {
+      text: "text"
+    }
+, success: function(data){
+  console.log(data);
+  console.log("request completed");
+},
+error: function(){
+    console.log(arguments);
+
+  console.log("some error");
+}
+
+});
+</script>
+ -->

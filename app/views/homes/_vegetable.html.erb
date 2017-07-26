@@ -1,9 +1,14 @@
 <% @vegetables.each do |v| %>
        <section>
-          <%= v.name%>
-          <img src="fru.jpg">
-          <a href="">Add To Cart</a>
-          <a href="">Some Facts</a>
+          <%= v.name%><br>
+          <img src="fru.jpg"><br>
+          <div class="iteminfo">
+          	<div>Rs.<%=v.rate%></div>
+          	<div class="addtocart"><%=button_to "Add To Cart" , action: "addvegetable" , params: { vegetable_id: v.id } , :method => "post" %></div><div><%=v.weight%><%=v.weightin%></div>
+          </div>
+          
+           
+        <!--  <a href="">Some Facts</a> -->
         </section>
         
       <%end%>

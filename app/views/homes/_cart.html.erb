@@ -1,0 +1,36 @@
+<% total =0 %>
+<%total_item = 0%>
+<div class="cart">
+
+
+	<table><!-- 
+		<% if total>0%>
+		<thead>
+			<th>Item</th>
+			<th>Quantity</th>
+			<th>Amount</th>
+		</thead>
+		<%end%>
+	 -->
+
+		<tbody>
+			<% if current_user%>
+			      <% @cartsitems.where(cart_id: @cart.id , user_id: current_user.id).each do |c| %>
+				      <tr>
+				        <td><%= c.item %></td><td>Wt Kg X   <%=c.quantity %></td><td>Rs. <%= c.amount%></td>
+				        <%total = total+c.amount %><% total_item = total_item + c.quantity%>
+				      </tr>
+				  <%end%>
+		 		 <% if total>0%>
+	
+		</tbody>
+	</table>
+				 	 <div class="total">Total Quantity:   <%=total_item%> <br>Total Amount: Rs. <%=total%><br><br>
+				     <div class="button"><%= button_to "PROCEED TO CHECKOUT",checkout_path,method: :get %></div></div>
+					 
+				 <%end%>
+
+				
+			<%end%>
+	
+ </div>

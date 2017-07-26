@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Status: false
+  Buyername: MyString
+  Buyernumber: 1
+  Buyeraddress: MyString
+  cart_id: 
+  user_id: 
+
+two:
+  Status: false
+  Buyername: MyString
+  Buyernumber: 1
+  Buyeraddress: MyString
+  cart_id: 
+  user_id: 

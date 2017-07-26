@@ -1,10 +1,13 @@
-
       <% @fruits.each do |f| %>
-        <section>
-          <%= f.name%>
-          <img src="fru.jpg">
-          <a href="">Add To Cart</a>
-          <a href="">Some Facts</a>
-        </section>
         
-      <%end%>
+        <section>
+          <%= f.name%><br>
+          <img src="fru.jpg"><br>
+          <div class="iteminfo">
+          	<div>Rs.<%=f.rate%></div><div class="addtocart"><%=button_to "Add To Cart" , action: "addfruit" , params: { fruit_id: f.id } , :method => "post" %></div>
+          	<div><%=f.weight%><%=f.weightin%></div>
+          </div>
+          
+<!--           <a href="">Some Facts</a> -->
+        </section>
+       <%end%>

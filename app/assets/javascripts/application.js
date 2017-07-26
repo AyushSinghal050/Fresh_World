@@ -13,5 +13,28 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery.noty.packaged.min.js
+
+//= require_tree .
+
+// window.addEventListener("load",function(){
+// 	ele=document.getElementById("addtocart");
+// 	ele.addEventListener("click",function(e){
+// 		e.preventDefault();
+// 		console.log("asd");
+// 		$.ajax({
+// 			url:'/homes/addfruit',
+// 			data:{
+// 				fruit_id: "f.id" ,
+// 				method: "post"
+// 			},
+// 			success:function(data){
+// 				console.log(data);
+// 			},
+// 			error:function(){
+
+// 			}
+
+// 		})
+// 	})	
+// })

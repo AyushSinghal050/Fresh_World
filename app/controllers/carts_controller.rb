@@ -2,6 +2,7 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   # GET /carts
   # GET /carts.json
+before_filter :initialize_cart
   def index
     @carts = Cart.all
   end
@@ -24,7 +25,7 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(cart_params)
-
+byebug
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: 'Cart was successfully created.' }

@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
 
+  resources :orders
+  resources :cartsitems
+  get '/checkout' => 'homes#checkout'
   get '/vegetable' => 'homes#vegetable'
   get '/fruit' => 'homes#fruit'
   get '/offer' => 'homes#offer'
+  get '/index' => 'homes#index'
+  get '/about' => 'homes#about'
+  get '/contact' => 'homes#contact'
+  get '/tnc' => 'homes#tnc'
+  get '/member' => 'members#index'
+  get '/moderator' => 'moderators#index'
+  get '/curr_orders' => 'moderators#curr_orders'
+  get '/delivered' => 'moderators#delivered'
+
+  get '/ajax' => 'home#ajax'
   resources :offers
   resources :combos
   resources :combos
@@ -12,7 +25,9 @@ Rails.application.routes.draw do
   resources :vegetables
   resources :fruits
   devise_for :users
-
+  post 'homes/addfruit' => "homes#addfruit"
+  post 'homes/addvegetable' => "homes#addvegetable"
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

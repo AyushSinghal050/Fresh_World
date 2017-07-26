@@ -1,55 +1,31 @@
-<!-- <p id="notice"><%= notice %></p>
- -->
-<!-- <header>
-  <div id="logo"><img src="logo.png" height="60px"></div>
-  <div id="title"><h1>Fresh World</h1></div>
-  <div id="login"><a href="">Login</a></div>
-</header> -->
-
-
-
-<header id="subheading">
-  <div id="itemSearch">
-     <a href="vegetable">Vegetables</a>
+<header class="subheading">
+  <div class="itemSearch">
+     <a href="index">Home</a>
+     <a href="">Vegetables</a>
      <a href="fruit">Fruits</a>
      <a href="offer">Offers</a>
-     <a href="">Exotic</a>
+     
    </div>
-   <div id="search"><a href=""> Search</a></div> 
+   <div class="search"><a href=""> <button>Search</button></a></div> 
 </header>
 
 <main>
 
-  <section id="ad">
-    <div>Ad</div>
+  <section class="ad">
+    <div><%= render 'ad' %></div>
   </section>
 
-  <section id="item">
-    <div id="items">
-    
-      <%= render 'vegetable' %>
+  <section class="item">
+    <section class="items">
+     
+      <%= render 'vegetable' %>     
 
 
 
-      
-
-
-
-      
-
-
-
-    </div>
+    </section>
   </section>
 
-  <!-- <section id="cart"> -->
-    <div>
-      Cart
-      <%= button_to "PROCEED AND CHECKOUT",new_cart_path,method: :get %>
-    </div>
-    
-  </section>
+
+  <!-- <section class="cart"> -->
+    <%= render 'cart' %>
 </main>
-<footer>
-  Footer
-</footer>

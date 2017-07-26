@@ -5,6 +5,7 @@ class VegetablesController < ApplicationController
   # GET /vegetables.json
   def index
     @vegetables = Vegetable.all
+     @carts = Cart.all
   end
 
   # GET /vegetables/1
@@ -71,4 +72,32 @@ class VegetablesController < ApplicationController
     def vegetable_params
       params.require(:vegetable).permit(:name, :rate, :quantity)
     end
+
+
+     def addfruit
+
+  
+        # @cart = Cart.create
+        # session[:cart_id] = @cart.id
+     @fruit = Fruit.find(params[:fruit_id])
+     if @fruit
+      if @cart.quantity
+         @cart.quantity = @cart.quantity+1
+      else
+         @cart.fruit_id = @fruit.id 
+         @cart.item = @fruit.name
+         @cart.quantity = 1
+         @cart.amount = @fruit.rate
+      end
+      @cart.save!
+     
+       
+     else
+       
+
+     end
+    
+     redirect_to '/'
+  end
+
 end

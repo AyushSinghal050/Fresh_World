@@ -9,67 +9,52 @@
 <body>
 
 
-</head>
-<body>
 <% if notice %>
 <script type="text/javascript">
 	noty({text: '<%= notice %>', type: 'alert'});
 </script>
-
 <% end %>
 
 
 <% if alert %>
-
 <script type="text/javascript">
 	noty({text: '<%= alert %>', type: 'error'});
 </script>
 <% end %>
  
 
+	<header>
+		<div class="logo">
+			<!-- <%= image_tag 'dirty-fruit.jpg' %> -->
+			<img src="dirty-fruit.jpg">
+			<!-- <a href="index">Home</a> -->
+		</div>
+		
+		<nav>
+			<ul>
+			<% if user_signed_in? %>
+				<li style="list-style: none;">  <%= link_to "Logout",destroy_user_session_path,method: :delete %></li>
+			<% else %>
+				<li style="list-style: none;">  <%= link_to "Login",new_user_session_path %></li>
+			<% end %>
+			</ul>
+		</nav>
+	</header>
 
- <% if user_signed_in? %>
-<header>
-
-<div class="logo">
-<%= image_tag 'log.png' %>
-</div>
-
-
-<nav>
-
-<ul>
-
-<li style="list-style: none;">  <%= link_to "Logout",destroy_user_session_path,method: :delete %></li>
-</ul>
-</nav>
-
-
-</header>
-
-<% else %>
-<header>
-
-<div class="logo">
-<%= image_tag 'log.png' %>
-</div>
-
-
-<nav>
-
-<ul>
-
-<li style="list-style: none;">  <%= link_to "Login",new_user_session_path %></li>
-</ul>
-</nav>
-
-
-</header>
-
-
- <% end %>
-
+	
 <%= yield %>
+
+
+	<footer>
+	  <img src="dirty-fruit.jpg">  
+	    <ul>
+	      <!-- <li><a href="about">About Us</a></li> -->
+	      <li><%= link_to "About Us" ,about_path,method: :get %></li> 
+	      <li><a href="contact">Contact Us</a></li>
+	      <li><a href="tnc">Terms & Conditions</a></li>
+	    </ul>
+	</footer>
+
 
 </body>
 </html>
